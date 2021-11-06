@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ермолаев</title>
+    <meta charset="utf-8">
+    <script type="text/javascript">
+       //функция для создания массива пользователем
+        function formMas(){
+            var n = Number(prompt("Введите количество элементов:"));
+            var nMas = [];
+            for(var i=0; i<n; i++){
+                nMas[i]=Number(prompt("Введите число:"));
+            }
+            return nMas;
+        }
+
+        //функция для поиска индекса минимального элемента
+        function findMinInd(mas){
+            var min=0;
+            for(var i=1; i<mas.length; i++){
+                if(mas[i]<mas[min]){
+                    min=i;
+                }
+            }
+            return min;
+        }
+        
+        var myArray = formMas();
+
+        //Поиск минимального элемента
+        var minInd=findMinInd(myArray);
+        var minim=myArray[minInd];
+        
+        //Сумма элементов массива, располоенных между первым и последним положительными элементами
+        var firstPolEl;
+        var lastPolEl;
+        var sumBetPol=0;
+        for( var i=0; i<myArray.length; i++){
+            if(myArray[i]>0){
+                firstPolEl=i;
+                break;
+            }
+        }
+        for( var i=myArray.length; i>0; i--){
+            if(myArray[i]>0){
+                lastPolEl=i;
+                break;
+            }
+        }
+        for( var i=firstPolEl+1; i<lastPolEl; i++){
+            sumBetPol+=myArray[i];
+        }
+
+        //Массив, где сначала нули, а потом всё остальное
+        var zero=[];
+        var all = [];
+        for(var k=0; k<myArray.length; k++){
+            if(myArray[k]==0){
+                zero.push(myArray[k]);
+            }
+            else{
+                all.push(myArray[k]);
+            }
+        }
+        myArray=zero.concat(all);
+
+        var str = myArray.join("; ");
+        document.writeln("Минимальный элемент: "+minim+"; Сумма элементов массива, располоенных между первым и последним положительными элементами: "+sumBetPol+"; Массив, где сначала нули, а потом всё остальное: "+str);        
+    </script>
+</head>
+<body>
+   
+</body>
+</html>

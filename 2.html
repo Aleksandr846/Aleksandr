@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ермолаев</title>
+    <meta charset="utf-8">
+</head>
+    <script type="text/javascript">
+    function func(){
+        var x = Number (document.forms["frm"].elements["varx"].value);
+        var n = Number (document.forms["frm"].elements["varn"].value);
+        var b = 0;
+        for(var a=1; a<=n; a++){
+            b=b+((x**a)/a);
+        }
+        b=b*-1;
+        document.writeln(b);
+     }
+    </script>
+<body>
+ <form id="frm">
+        <p>Введите число x между -1 и 1:</p>
+        <input type="text" name="varx" id="x">
+        <p>Введите число n:</p>
+        <input type="text" name="varn" id="n">
+        <input type="submit" value="OK" onclick="func()">
+    </form>
+<h2>Ответ:</h2>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ермолаев</title>
+    <meta charset="utf-8">
+</head>
+<body>
+    <script type="text/javascript">
+        var str = prompt("Введите текст: "); //Создаем переменную, куда запишем текст
+        var arr=str.split(/\.|!|\?/);//разделяем строку на массив по знакам препинания
+        var nArr= new Array();//создаю новый массив, где будут находится нужные предложения
+
+        for( var i=0; i<arr.length; i++){//перебираем элементы
+            var isFind=false;
+            for( var j =0; j<arr[i].length; j++){
+                if(arr[i][j]==','){
+                    isFind = true;
+                }
+            }
+            if(isFind==false){
+                nArr.push(arr[i]);
+            }
+        }
+        var str=nArr.join("; ");
+        alert(str);//вывод информации на экран
+    </script>
+</body>
+</html>
