@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Лабораторная работа 8</title>
+</head>
+<body style='background-color: white; color: black' class = "MyBody">
+<p>Текст (от лат. textus — ткань; сплетение, сочетание) — зафиксированная на каком-либо материальном носителе человеческая мысль; в общем плане связная и полная последовательность символов.
+
+Существуют две основные трактовки понятия «текст»: имманентная (расширенная, философски нагруженная) и репрезентативная (более частная). Имманентный подход подразумевает отношение к тексту как к автономной реальности, нацеленность на выявление его внутренней структуры. Репрезентативный — рассмотрение текста как особой формы представления информации о внешней тексту действительности.</p>
+<h1><a href="https://www.google.ru/" class="MyLink">Ссылка</a></h1>
+    <script type="text/javascript">
+ 		var a = prompt("Введите цвет фона:");
+        var b = prompt("Введите цвет текста:");
+        var c = prompt("Введите ссылку");
+        var bodyColor = document.querySelector("body.MyBody");
+        bodyColor.setAttribute("style", `background-color:${a}`);
+        var textColor = document.documentElement;
+        textColor.style.color = b;
+        var link = document.querySelector("a.MyLink");
+        link.setAttribute("href", `${c}`);
+    </script>
+</body>
+</html>
